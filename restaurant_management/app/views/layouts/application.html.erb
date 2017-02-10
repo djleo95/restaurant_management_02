@@ -1,12 +1,74 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RestaurantManagement</title>
+    <title><%= t "restaurant_name" %></title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+    <link rel="stylesheet" 
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+      crossorigin="anonymous">
   </head>
   <body>
+    <header class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon icon-bar"></span>
+            <span class="icon icon-bar"></span>
+            <span class="icon icon-bar"></span>
+          </button>
+          <%= link_to t("restaurant_name"), "#home", class: "navbar-brand" %></li>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to t("navbar.home"), "#" %></li>
+            <li><%= link_to t("navbar.food_gallery"), "#" %></li>
+            <li><%= link_to t("navbar.menu"), "#" %></li>
+            <li><%= link_to t("navbar.chefs"), "#" %></li>
+            <li><%= link_to t("navbar.review"), "#" %></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
     <%= yield %>
+    
+    <footer class="parallax-section contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.6s">
+            <h2 class="heading"><%= t "footer.contact_info" %></h2>
+            <div class="ph">
+              <p><i class="fa fa-phone"></i><%= t "footer.phone" %></p>
+              <h4><%= t "footer.phone_number" %></h4>
+            </div>
+            <div class="address">
+              <p><i class="fa fa-map-marker"></i><%= t "footer.location" %></p>
+              <h4><%= t "footer.location_detail" %></h4>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.6s">
+            <h2 class="heading"><%= t "footer.open_house" %></h2>
+            <p><%= t "footer.sunday" %><span><%= t "footer.time1" %></span></p>
+            <p><%= t "footer.sunday" %><span><%= t "footer.time1" %></span></p>
+            <p><%= t "footer.sunday" %><span><%= t "footer.time1" %></span></p>
+          </div>
+          <div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.6s">
+            <h2 class="heading"><%= t "footer.follow_us" %></h2>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <section id="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            <h3><%= t "restaurant_name" %></h3>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

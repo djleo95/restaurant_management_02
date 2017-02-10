@@ -1,23 +1,50 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  restaurant_name: "ZENTRO" 
+  site:
+    name: Library
+    sologan: Sologan
+  error:
+    desc: The form contains
+  navbar:
+    home: HOME
+    food_gallery: FOOD GALLERY
+    menu: MENU
+    chefs: CHEFS
+    review: REVIEW
+  home:
+    title: ZENTRO RESTAURANT
+    clean_and_simple: CLEAN & SIMPLE DESIGN
+    learn_more: LEARN MORE
+  gallery:
+    food_gallery: Food Gallery
+    gallery1_name: Lemon-Rosemary Prawn
+    gallery1_detail: Seafood / Shrimp / Lemon
+    gallery2_name: Lemon-Rosemary Vegetables
+    gallery2_detail: Tomato / Rosemary / Lemon
+    gallery3_name: Lemon-Rosemary Bakery
+    gallery3_detail: Bread / Rosemary / Orange
+    gallery4_name: Lemon-Rosemary Salad
+    gallery4_detail: Chicken / Rosemary / Green
+    gallery5_name: Lemon-Rosemary Pizza
+    gallery5_detail: Pasta / Rosemary / Green
+  menu:
+    menu: Special Menu
+    dish1_name: Lemon-Rosemary Vegetable ................ 
+    dish1_price: $20.50
+    dish1_discription: Chicken / Rosemary / Lemon
+  chefs:
+    meet_chefs: Meet Zentro chefs
+    chef1_name: Thanya
+    chef1_role: Main Chef
+  contact:
+    contact_us: Contact Us
+  footer:
+    contact_info: Contact Info.
+    phone: Phone
+    phone_number: 090-080-0760
+    location: Our Location
+    location_detail: 120 Duis aute irure, California, USA
+    open_house: Open Hours
+    follow_us : Follow Us
+    sunday: Sunday 
+    time1: 10:30 AM - 10:00 PM
