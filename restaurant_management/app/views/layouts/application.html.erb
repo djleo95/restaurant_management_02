@@ -18,11 +18,12 @@
             <span class="icon icon-bar"></span>
             <span class="icon icon-bar"></span>
           </button>
-          <%= link_to t("restaurant_name"), "#home", class: "navbar-brand" %></li>
+          <%= link_to t("restaurant_name"), root_path, class: "navbar-brand" %></li>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to t("navbar.home"), "#" %></li>
+            <li><%= link_to t("navbar.login"), new_user_path %></li>
+            <li><%= link_to t("navbar.home"), root_path %></li>
             <li><%= link_to t("navbar.food_gallery"), "#" %></li>
             <li><%= link_to t("navbar.menu"), "#" %></li>
             <li><%= link_to t("navbar.chefs"), "#" %></li>
