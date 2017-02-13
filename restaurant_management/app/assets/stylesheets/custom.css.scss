@@ -82,12 +82,9 @@ hr {
     margin-top: 40px;
     transition: all 0.4s ease-in-out;
   }
+}
 
-  .btn:hover {
-    background: #ffffff;
-    color: #202020;
-  }
-} 
+
 
 footer {
   -webkit-background-size: cover;
@@ -129,9 +126,8 @@ footer {
   background: #343434;
   color: #ffffff;
   padding-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
   text-align: center;
-
   p {
     color: #ffffff;
   }
@@ -275,4 +271,52 @@ section {
     letter-spacing: 2px;
     padding-top: 20px;
   }
+}
+
+#user{
+  padding: 20px
+}
+
+#signup{
+  font-weight: bold;
+  color: #1cbb9f;
+}
+
+.dropbtn {
+  background-color: #f9f9f9;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #666666;
+}
+
+.dropdown {
+  position: absolute;
+  display: inline-block;
+  background-color: #f9f9f9;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+
+.dropdown-content a {
+  color: #666666;
+  padding: 12px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
