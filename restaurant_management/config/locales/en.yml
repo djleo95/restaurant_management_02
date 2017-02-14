@@ -12,6 +12,12 @@ en:
     chefs: CHEFS
     review: REVIEW
     login: LOGIN
+    signup: SIGN UP
+    user: USERS
+    profile: Profile
+    setting: Setting
+    logout: Log out
+    account: Account
   home:
     title: ZENTRO RESTAURANT
     clean_and_simple: CLEAN & SIMPLE DESIGN
