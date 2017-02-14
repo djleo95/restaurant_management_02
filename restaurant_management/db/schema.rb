@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170207035507) do
+ActiveRecord::Schema.define(version: 20170213020016) do
 
   create_table "bill_details", force: :cascade do |t|
     t.integer  "quantity"
@@ -130,8 +130,9 @@ ActiveRecord::Schema.define(version: 20170207035507) do
     t.string   "name"
     t.string   "email"
     t.boolean  "isAdmin"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
 
 end

@@ -2,7 +2,7 @@ en:
   restaurant_name: "ZENTRO" 
   site:
     name: Library
-    sologan: Sologan
+    sologan: Slogan
   error:
     desc: The form contains
   navbar:
@@ -11,6 +11,7 @@ en:
     menu: MENU
     chefs: CHEFS
     review: REVIEW
+    login: LOGIN
   home:
     title: ZENTRO RESTAURANT
     clean_and_simple: CLEAN & SIMPLE DESIGN
@@ -48,3 +49,20 @@ en:
     follow_us : Follow Us
     sunday: Sunday 
     time1: 10:30 AM - 10:00 PM
+  error:
+    signup: This form contain %{count}
+    error: error
+    errors: errors
+    _error: This form contain
+  flash:
+    wrong_pass: Invalid email/password combination
+    user_not_exist: User not exist
+    welcome: Welcome to ZENTRO family!!
+    create_new_account: Create new account
+  title:
+    sign_up: Sign up
+    login: Log in
+  messeger:
+    new_user: New user? Sign up now.
+  label:
+    pass_confirm: Password confirmation
