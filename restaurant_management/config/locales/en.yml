@@ -2,7 +2,7 @@ en:
   restaurant_name: "ZENTRO" 
   site:
     name: Library
-    sologan: Slogan
+    slogan: Slogan
   error:
     desc: The form contains
   navbar:
@@ -20,8 +20,8 @@ en:
     account: Account
   home:
     title: ZENTRO RESTAURANT
-    clean_and_simple: CLEAN & SIMPLE DESIGN
-    learn_more: LEARN MORE
+    clean_and_simple: CLEAN & TASTY
+    find_tables: FIND TABLES
   gallery:
     food_gallery: Food Gallery
     gallery1_name: Lemon-Rosemary Prawn
@@ -72,3 +72,13 @@ en:
     new_user: New user? Sign up now.
   label:
     pass_confirm: Password confirmation
+  order_table:
+    index:
+      found_out: "Having found out"
+      tables: "tables:"
+      not_found: The satisfied tables are not found!
+      table: table
+      find_tables: Find tables
+      capacity: Capacity
+      from: From
+      to: To
