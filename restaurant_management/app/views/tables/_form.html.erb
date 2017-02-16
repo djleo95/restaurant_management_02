@@ -26,7 +26,8 @@
         </div>
         <div class="col-sm-2 dropdown-button">
           <div class="input-group">
-            <%= f.number_field :capacity, min: 1, max: 6, class: "form-control has-dark-background", 
+            <%= f.number_field :capacity, min: Settings.Capacity.minimum_value, 
+              max: Settings.Capacity.maximum_value, class: "form-control has-dark-background", 
               placeholder: (t "order_table.index.capacity") %>
           </div>
         </div>
@@ -42,9 +43,14 @@
               placeholder: (t "order_table.index.to") %>
           </div>
         </div>
-        <div class="col-sm-3 submit_button"> 
+        <div class="col-sm-2 submit_button"> 
           <div class="input-group">
             <%= f.submit t "order_table.index.find_tables" %>
+          </div>
+        </div>
+        <div class="col-sm-1 submit_button"> 
+          <div class="input-group">
+            <%= link_to t("order_table.index.go_book_table"), new_guest_path, class: "btn2" %>
           </div>
         </div>
         <div class="clearfix"> </div>

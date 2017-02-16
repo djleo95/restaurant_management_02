@@ -2,8 +2,7 @@ class GuestsController < ApplicationController
   def create
     @guest = Guest.new guest_params
     if @guest.save
-      flash[:success] = t "flash.step3"
-      redirect_to @user
+      redirect_to new_guest_order_table_path @guest
     else
       render :new
     end

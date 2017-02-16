@@ -1,0 +1,16 @@
+<section id="contact" class="parallax-section">
+  <div class="container">
+    <div class="row details-1">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <div class="col-md-offset-1 col-md-10 col-sm-12 text-center">
+        <h1 class="heading"><%= t "order_table.index.book_table" %></h1>
+      </div>
+      <div class="col-md-offset-1 col-md-10 col-sm-12">
+        <%= render "form" %>
+      </div>
+      <div class="col-md-2 col-sm-1"></div>
+    </div>
+  </div>
+</section>

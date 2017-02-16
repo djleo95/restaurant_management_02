@@ -96,6 +96,17 @@ hr {
   }
 } 
 
+.btn2 {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 500;
+  border: none;
+  background:#0a6f42;
+  padding: 16px;
+  outline: none;
+}
+
 footer {
   -webkit-background-size: cover;
   background-size: cover;
@@ -277,6 +288,13 @@ input {
     font-style: italic;
     margin: 0 0 0px 0;
   }
+}
+
+.alert {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 0px solid transparent;
+  border-radius: 0px;
 }
 
 .field_with_errors {

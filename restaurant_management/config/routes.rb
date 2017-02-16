@@ -6,8 +6,12 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-  resources :users, only: [:show, :new, :create]
+  resources :users, only: [:show, :new, :create] do
+    resources :order_tables, only: [:new, :create]
+  end
   resources :tables, only: [:index]
-  resources :guests, only: [:new, :create]
   resources :admins, only: :show
+  resources :guests, only: [:new, :create] do
+    resources :order_tables, only: [:new, :create]
+  end
 end
