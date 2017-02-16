@@ -4,7 +4,6 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :email
       t.boolean :isAdmin, default: false
-      add_index :users, :email, unique: true
 
       t.timestamps
     end

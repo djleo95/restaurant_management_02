@@ -26,6 +26,7 @@ config/settings/test.yml
 config/environments/*.local.yml
 .DS_Store
 /.idea
+.byebug_history
 
 # Ignore application configuration
 /config/application.yml
