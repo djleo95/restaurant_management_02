@@ -24,6 +24,7 @@ p {
   font-size: 16px;
   letter-spacing: 0.4px;
   line-height: 28px;
+  margin: 12px 0 20px;
 }
 
 hr {
@@ -151,7 +152,60 @@ footer {
 }
 
 .contact {
-  background-color: black;
+  background-color: #1e1f1a;
+}
+
+#contact {
+  padding-top: 80px;
+  padding-bottom: 100px;
+ 
+  p {
+    color: #ffffff;
+    letter-spacing: 0.4px;
+    line-height: 18px;
+    align-items: center;
+  }
+
+  .div_text{
+    height: 20px !important;
+  }
+  
+  .form-control {
+    background: #ffffff;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: all 0.4s ease-in-out;
+    
+    focus {
+      border-color: #f9f9f9;
+    }
+  }
+
+  input {
+    height: 48px;
+  }
+
+  input[type="submit"] {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 500;
+    border: none;
+    width: 100%;
+    background:#0a6f42;
+    padding: 16px;
+    outline: none;
+    letter-spacing: 2px;
+    margin-top: 12px;
+    height: 50px;
+  }
+
+  input[type="submit"]:hover {
+    background:#527a5f;
+  }
 }
 
 aside {
@@ -331,7 +385,7 @@ section {
 }
 
 .details-1 {
-  padding: 2em 0 1em;	
+  padding: 2em 0 1em; 
   background-color: rgb(42, 43, 42);
 }
 

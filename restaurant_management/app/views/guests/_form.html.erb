@@ -1,0 +1,20 @@
+<%= form_for @guest, url: guests_path, method: :post do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="col-sm-12 dropdown-buttons">
+    <div class="col-md-4 col-sm-6">
+      <%= f.text_field :name, class: "form-control", 
+        placeholder: (t "guest.name") %>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <%= f.text_field :email, class: "form-control", 
+        placeholder: (t "guest.email") %>
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <%= f.text_field :phone, class: "form-control", 
+        placeholder: (t "guest.phone") %>
+    </div>
+    <div class="col-sm-12">
+      <%= f.submit t "guest.next" %>
+    </div>
+  </div>
+<% end %>
