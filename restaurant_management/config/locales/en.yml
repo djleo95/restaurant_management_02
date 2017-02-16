@@ -65,6 +65,8 @@ en:
     user_not_exist: User not exist
     welcome: Welcome to ZENTRO family!!
     create_new_account: Create new account
+    step3: Book a table!
+    step2: Input your information!
   title:
     sign_up: Sign up
     login: Log in
@@ -82,3 +84,9 @@ en:
       capacity: Capacity
       from: From
       to: To
+  guest:
+    name: Name
+    email: email
+    phone: Phone Number
+    next: Next
+    about_you: About you
