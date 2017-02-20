@@ -7,83 +7,95 @@
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
   <body>
-    <header class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon icon-bar"></span>
-            <span class="icon icon-bar"></span>
-            <span class="icon icon-bar"></span>
-          </button>
-          <%= link_to t("restaurant_name"), root_path, class: "navbar-brand" %></li>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
+  <header class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+        </button>
+        <%= link_to t("restaurant_name"), root_path, class: "navbar-brand" %></li>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <% if logged_in? %>
+            <% if @current_user.isAdmin? %>
+              <li><%= link_to t("admin.menu"), "#" %></li>
+              <li><%= link_to t("admin.cate"), "#" %></li>
+              <li><%= link_to t("admin.staff"), "#" %></li>
+              <li><%= link_to t("admin.working"), "#" %></li>
+              <li><%= link_to t("admin.bill"), "#" %></li>
+              <li><%= link_to t("admin.table"), "#" %></li>
+              <li><%= link_to t("admin.revenue"), "#" %></li>
+            <% else %>
+              <li><%= link_to t("navbar.home"), root_path %></li>
+              <li><%= link_to t("navbar.food_gallery"), "#" %></li>
+              <li><%= link_to t("navbar.menu"), "#" %></li>
+              <li><%= link_to t("navbar.chefs"), "#" %></li>
+              <li><%= link_to t("navbar.review"), "#" %></li>
+            <% end %>
+            <div class="dropdown">
+              <button class="dropbtn"><%= t "navbar.account" %></button>
+              <div class="dropdown-content">
+                <li><%= link_to t("navbar.profile"), current_user %></li>
+                <li><%= link_to t("navbar.setting"), "#" %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to t("navbar.logout"), logout_path, method: :delete %>
+                </li>
+              </div>
+            </div>
+          <% else %>
             <li><%= link_to t("navbar.home"), root_path %></li>
             <li><%= link_to t("navbar.food_gallery"), "#" %></li>
             <li><%= link_to t("navbar.menu"), "#" %></li>
             <li><%= link_to t("navbar.chefs"), "#" %></li>
             <li><%= link_to t("navbar.review"), "#" %></li>
-            <% if logged_in? %>
-              <div class="dropdown">
-                <button class="dropbtn"><%= t "navbar.account" %></button>
-                <div class="dropdown-content">
-                  <li><%= link_to t("navbar.profile"), current_user %></li>
-                  <li><%= link_to t("navbar.setting"), "#" %></li>
-                  <li class="divider"></li>
-                  <li>
-                    <%= link_to t("navbar.logout"), logout_path, method: :delete %>
-                  </li>
-                </div>
-              </div>
-              </li>
-            <% else %>
-              <li><%= link_to t("navbar.login"), login_path %></li>
-              <li id="signup"><%= link_to t("navbar.signup"), new_user_path %></li>
-            <% end %>
-          </ul>
+            <li><%= link_to t("navbar.login"), login_path %></li>
+            <li id="signup"><%= link_to t("navbar.signup"), new_user_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <%= yield %>
+
+  <footer class="parallax-section contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.6s">
+          <h2 class="heading"><%= t "footer.contact_info" %></h2>
+          <div class="ph">
+            <p><i class="fa fa-phone"></i><%= t "footer.phone" %></p>
+            <h4><%= t "footer.phone_number" %></h4>
+          </div>
+          <div class="address">
+            <p><i class="fa fa-map-marker"></i><%= t "footer.location" %></p>
+            <h4><%= t "footer.location_detail" %></h4>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.6s">
+          <h2 class="heading"><%= t "footer.open_house" %></h2>
+          <p><%= t "footer.sunday" %><span><%= t "footer.time1" %></span></p>
+          <p><%= t "footer.sunday" %><span><%= t "footer.time1" %></span></p>
+          <p><%= t "footer.sunday" %><span><%= t "footer.time1" %></span></p>
+        </div>
+        <div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.6s">
+          <h2 class="heading"><%= t "footer.follow_us" %></h2>
         </div>
       </div>
-    </header>
-
-    <%= yield %>
-    
-    <footer class="parallax-section contact">
+    </div>
+    <section id="copyright">
       <div class="container">
         <div class="row">
-          <div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.6s">
-            <h2 class="heading"><%= t "footer.contact_info" %></h2>
-            <div class="ph">
-              <p><i class="fa fa-phone"></i><%= t "footer.phone" %></p>
-              <h4><%= t "footer.phone_number" %></h4>
-            </div>
-            <div class="address">
-              <p><i class="fa fa-map-marker"></i><%= t "footer.location" %></p>
-              <h4><%= t "footer.location_detail" %></h4>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.6s">
-            <h2 class="heading"><%= t "footer.open_house" %></h2>
-            <p><%= t "footer.sunday" %><span><%= t "footer.time1" %></span></p>
-            <p><%= t "footer.sunday" %><span><%= t "footer.time1" %></span></p>
-            <p><%= t "footer.sunday" %><span><%= t "footer.time1" %></span></p>
-          </div>
-          <div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.6s">
-            <h2 class="heading"><%= t "footer.follow_us" %></h2>
+          <div class="col-md-12 col-sm-12">
+            <h3><%= t "restaurant_name" %></h3>
           </div>
         </div>
       </div>
-      <section id="copyright">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 col-sm-12">
-              <h3><%= t "restaurant_name" %></h3>
-            </div>
-          </div>
-        </div>
-      </section>
-    </footer>
-
-
+    </section>
+  </footer>
   </body>
 </html>

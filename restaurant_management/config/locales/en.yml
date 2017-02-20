@@ -63,6 +63,7 @@ en:
   flash:
     wrong_pass: Invalid email/password combination
     user_not_exist: User not exist
+    user_not_found: User not found
     welcome: Welcome to ZENTRO family!!
     create_new_account: Create new account
     step3: Book a table!
@@ -90,3 +91,11 @@ en:
     phone: Phone Number
     next: Next
     about_you: About you
+  admin:
+    menu: Menu
+    cate: Category
+    staff: Staff
+    working: Working day
+    bill: Bill
+    table: Table
+    revenue: Revenue

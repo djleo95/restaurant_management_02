@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new, :create]
   resources :tables, only: [:index]
   resources :guests, only: [:new, :create]
+  resources :admins, only: :show
 end

@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
+  before_action :find_user, except: [:index, :new, :create]
+
   def show
-    unless (@user = User.find_by id: params[:id])
-      flash[:danger] = t "flash.user_not_exist"
-      redirect_to root_url
-    end
   end
 
   def new
@@ -25,5 +23,13 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit :name, :email, :password,
       :password_confirmation
+  end
+
+  def find_user
+    @user = User.find_by id: params[:id]
+    unless @user.present?
+      flash[:danger] = t "flash.user_not_exist"
+      redirect_to root_path
+    end
   end
 end
