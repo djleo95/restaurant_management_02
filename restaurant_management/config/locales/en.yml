@@ -73,6 +73,9 @@ en:
       update_success: "Updated category successfully."
     staff: Don't have any staff!
     book_success: Book dish success!
+    staff_donthave: Don't have any staff!
+    update_staff: Update staff info
+    new_staff: Wow! We just have a new staff!
   title:
     sign_up: Sign up
     login: Log in
@@ -106,6 +109,12 @@ en:
     menu: Menu
     cate: Category
     staff: Staff
+    staff_add: Add Staff
+    staff_edit: Edit Staff
+    staff_name_input: Input staff name
+    staff_email_input: Input email
+    staff_salary_input: Input staff salary
+    staff_work_days_input: Input staff working days
     working: Working day
     bill: Bill
     table: Table
@@ -144,3 +153,7 @@ en:
     email: Email
     phone: Phone number
     my_review: My review
+    save: Save
+    cancel: Cancel
+    success: success
+    fail: fail

@@ -1,7 +1,7 @@
 <%= form_for [object, @order_table], method: :post do |f| %>
   <div class="col-sm-12 dropdown-buttons">
     <div class="col-md-12 col-sm-12">
-      <%= f.number_field :table_id, min: Settings.table.minimum_value, 
+      <%= f.number_field :table_id, min: Settings.table.minimum_value,
         max: Settings.table.maximum_value, class: "form-control", 
         placeholder: (t "order_table.index.table_number") %>
     </div>

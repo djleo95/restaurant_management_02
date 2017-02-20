@@ -1,8 +1,36 @@
 class Admin::StaffsController < ApplicationController
   before_action :find_staff, except: [:index, :new, :create]
+  before_action :get_role, only: [:new, :edit]
 
   def index
     @staffs = Staff.paginate page: params[:page], per_page: Settings.page.max[1]
+  end
+
+  def new
+    @staff = Staff.new
+  end
+
+  def create
+    @staff = Staff.new staff_params
+    if @staff.save
+      flash[:success] = t "flash.new_staff"
+      redirect_to admin_staffs_path
+    else
+      render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @staff.update_attributes staff_params
+      flash[:success] = t "dialog.success"
+      redirect_to admin_staffs_path
+    else
+      flash[:danger] = t "dialog.fail"
+      render :edit
+    end
   end
 
   def destroy
@@ -17,5 +45,14 @@ class Admin::StaffsController < ApplicationController
       flash[:danger] = t "flash.staff"
       redirect_to :back
     end
+  end
+
+  def staff_params
+    params.require(:staff).permit :name, :email, :salary,
+      :work_days, :role_id
+  end
+
+  def get_role
+    @role = Role.all.collect { |p| [ p.name, p.id ] }
   end
 end

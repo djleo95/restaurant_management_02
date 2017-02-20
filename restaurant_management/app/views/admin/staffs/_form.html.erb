@@ -1,0 +1,26 @@
+<%= form_for [:admin, @staff]  do |f| %>
+  <%= render "shared/error_messages", object: @staff %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control",
+    value: @staff.name, placeholder: t("admin.staff_name_input") %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email, class: "form-control",
+    value: @staff.email, placeholder: t("admin.staff_email_input") %>
+
+  <%= f.label :salary %>
+  <%= f.number_field :salary, class: "form-control",
+    value: @staff.salary, placeholder: t("admin.staff_salary_input") %>
+
+  <%= f.label :work_days %>
+  <%= f.number_field :work_days, class: "form-control",
+    value: @staff.work_days, placeholder: t("admin.staff_work_days_input") %>
+
+  <%= f.label :role_id %>
+  <%= f.select :role_id, @role, include_blank: false,
+    selected: @staff.role_id %>
+
+  <%= f.submit t("flash.update_staff"), class: "btn btn-primary" %>
+<% end %>
+
+

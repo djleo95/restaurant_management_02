@@ -1,21 +1,26 @@
 <section>
-  <table class="table table-bordered table table-striped">
-    <thead>
-      <tr>
-        <th class="col-md-1"><%= t "staff.name" %></th>
-        <th class="col-md-1"><%= t "staff.email" %></th>
-        <th class="col-md-1"><%= t "staff.salary" %></th>
-        <th class="col-md-1"><%= t "staff.workday" %></th>
-        <th class="col-md-1"><%= t "staff.role" %></th>
-        <th class="col-md-1"><%= t "staff.action" %></th>
-      </tr>
-    </thead>
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
-    <tbody>
-      <%= render @staffs %>
-      <%= will_paginate @staffs%>
-    </tbody>
-  </table>
+  <div class="container">
+    <div class="btn" id="add_btn">
+      <%= link_to t("admin.staff_add"), new_admin_staff_path %>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="col-md-1"><%= t "staff.name" %></th>
+          <th class="col-md-1"><%= t "staff.email" %></th>
+          <th class="col-md-1"><%= t "staff.salary" %></th>
+          <th class="col-md-1"><%= t "staff.workday" %></th>
+          <th class="col-md-1"><%= t "staff.role" %></th>
+          <th class="col-md-1"><%= t "staff.action" %></th>
+        </tr>
+      </thead>
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <tbody>
+        <%= render @staffs %>
+        <%= will_paginate @staffs%>
+      </tbody>
+    </table>
+  </div>
 </section>

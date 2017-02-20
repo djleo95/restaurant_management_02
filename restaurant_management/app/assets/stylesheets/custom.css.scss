@@ -619,7 +619,7 @@ a:hover{
 }
 
 #btn {
-  background: wheat;
+  background: #fffc94;
   display: inline-block;
 }
 
@@ -713,11 +713,11 @@ a:hover{
 
 #review {
   h4 {
-  line-height: 1.5;
+    line-height: 1.5;
   }
   .col-md-12 {
   }
-  
+
   .col-md-10 {
     background-color: #1a2b34;
     border: 1px solid #fff;
@@ -738,6 +738,11 @@ a:hover{
     border-radius: 40px;
     -webkit-border-radius: 40px;
     -moz-border-radius: 150px;
-    border:2px solid #fff;
+    border: 2px solid #fff;
   }
+}
+
+#add_btn {
+  display: inline-block;
+  background: #fffc94;
 }
