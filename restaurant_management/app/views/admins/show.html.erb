@@ -1,0 +1,14 @@
+<section>
+  <% provide :title, @user.name %>
+  <div class="row">
+    <section class="user_info">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <h1 id="user">
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </div>
+</section>
