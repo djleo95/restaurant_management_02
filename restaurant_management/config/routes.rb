@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :order_tables, only: [:new, :create]
   end
   namespace :admin do
+    resources :staffs
     resources :categories
   end
 end
