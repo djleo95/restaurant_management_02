@@ -1,0 +1,15 @@
+<li>
+  <div class="title_holder">
+    <%= category.name %>
+  </div>
+  <div class="view_holder">
+    <%= link_to t(".view_button"), admin_category_path(category) %>
+  </div>
+  <div class="edit_holder">
+    <%= link_to t(".edit_button"), edit_admin_category_path(category) %>
+  </div>
+  <div class="delete_holder">
+    <%= link_to t(".delete_button"), admin_category_path(category),
+      method: :delete, data: {confirm: t(".delete_warning")} %>
+  <div>
+</li>

@@ -471,3 +471,124 @@ section {
 .submit_button input[type="submit"]:hover{
   background:#527a5f;
 }
+
+.review {
+  list-style: none;
+  color: white;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    font-size: 18px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    font-size: 12px;
+    font-style: italic;
+    display: block;
+    margin-left: 60px;
+  }
+}
+
+span.picture {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}
+
+#mainarea {
+  color: #f5f5f5;
+  font-size: 20px;
+  h1 {
+    font-size: 50px;
+    color: white;
+    letter-spacing: 4px;
+    padding-top: 20px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+.titlebar {
+  border: solid 2px #12076c;
+  position: relative;
+  background: #0f0d59;
+  height: 40px;
+  font-size: 20px;
+}
+
+.name_holder {
+  position: absolute;
+  top: 3px;
+  left: 50px;
+  height: 40px;
+}
+
+.option_holder {
+    position: absolute;
+    top: 4px;
+    left: 590px;
+    height: 40px;
+    white-space: nowrap;
+}
+
+.sortable-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  li {
+    font-size: 20px;
+    margin: 2px 0;
+    padding: 0;
+    background: #f4f4f4;
+    border: #ccc;
+    height: 40px;
+    position: relative;
+    color: black;
+    .title_holder {
+      position: absolute;
+      top: 3px;
+      left: 50px;
+      width: 480px;
+    }
+    .view_holder {
+      position: absolute;
+      top: 3px;
+      left: 530px;
+      width: 50px;
+    }
+    .edit_holder {
+      position: absolute;
+      top: 3px;
+      left: 610px;
+      width: 50px;
+    }
+    .delete_holder {
+      position: absolute;
+      top: 3px;
+      left: 660px;
+      width: 50px;
+    }
+  }
+}
+
+#edit {
+  margin: 50px 300px;
+  font-size: 20px;
+  input {
+    font-size: 20px;
+  }
+}

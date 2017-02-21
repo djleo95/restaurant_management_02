@@ -10,8 +10,10 @@ Rails.application.routes.draw do
     resources :order_tables, only: [:new, :create]
   end
   resources :tables, only: [:index]
-  resources :admins, only: :show
   resources :guests, only: [:new, :create] do
     resources :order_tables, only: [:new, :create]
+  end
+  namespace :admin do
+    resources :categories
   end
 end
