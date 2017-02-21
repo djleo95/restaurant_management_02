@@ -8,11 +8,11 @@ class Guest < ApplicationRecord
   validates :name, presence: true, length: {maximum: 20}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum: 255},
-    format: {with: VALID_EMAIL_REGEX},
-    uniqueness: {case_sensitive: false}
+    format: {with: VALID_EMAIL_REGEX}
 
   validates :phone, presence: true, numericality: true,
-    length: {minimum: 8, maximum: 11}
+    length: {minimum: Settings.Phone_number.min_length, 
+      maximum: Settings.Phone_number.max_length}
 
   private
   def downcase_email

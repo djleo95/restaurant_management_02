@@ -1,0 +1,9 @@
+Phone_number:
+  min_length: 8
+  max_length: 11
+Table:
+  minimum_value: 1
+  maximum_value: 20
+Capacity:
+  minimum_value: 1
+  maximum_value: 6
