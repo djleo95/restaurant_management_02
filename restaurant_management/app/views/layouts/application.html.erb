@@ -23,7 +23,7 @@
               <% if @current_user.isAdmin? %>
                 <li><%= link_to t("admin.menu"), "#" %></li>
                 <li><%= link_to t("admin.cate"), admin_categories_path %></li>
-                <li><%= link_to t("admin.staff"), "#" %></li>
+                <li><%= link_to t("admin.staff"), admin_staffs_path %></li>
                 <li><%= link_to t("admin.working"), "#" %></li>
                 <li><%= link_to t("admin.bill"), "#" %></li>
                 <li><%= link_to t("admin.table"), "#" %></li>

@@ -7,3 +7,5 @@ Table:
 Capacity:
   minimum_value: 1
   maximum_value: 6
+Page:
+  max: 9

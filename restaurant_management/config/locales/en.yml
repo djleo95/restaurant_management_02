@@ -72,6 +72,7 @@ en:
     category:
       create_success: "Created category successfully"
       update_success: "Updated category successfully."
+    staff: Don't have any staff!
   title:
     sign_up: Sign up
     login: Log in
@@ -124,3 +125,14 @@ en:
         edit_button: "Edit"
         delete_button: "Delete"
         delete_warning: "Are you sure?"
+    about_you: ABOUT YOU
+  staff:
+    name: Name
+    salary: Salary
+    workday: Working day
+    role: Role
+    action: Action
+    email: Email
+    del: Delete
+  dialog:
+    confirm_delete: Delete? Are you sure?

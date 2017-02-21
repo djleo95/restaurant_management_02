@@ -1,0 +1,10 @@
+<tr>
+  <td><%= link_to staff.name, "#" %></td>
+  <td><%= staff.email %></td>
+  <td><%= staff.salary %></td>
+  <td><%= staff.work_days %></td>
+  <td><%= staff.role.name %></td>
+  <td><%= link_to t("staff.del"), admin_staff_path(staff),
+    method: :delete, id: "btn", class: "btn",
+    data: {confirm: t("dialog.confirm_delete")} %></td>
+</tr>

@@ -446,7 +446,7 @@ section {
   -o-transition: 0.3s;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  background-color: #ff;
+  background-color: #ffffff;
   border: none;
   outline: none;
   font-size: 14px;
@@ -591,4 +591,23 @@ span.picture {
   input {
     font-size: 20px;
   }
+}
+
+table {
+  color: #1cbb9f;
+  background: whitesmoke;
+}
+
+a {
+  color: #1cbb9f;
+}
+
+a:hover{
+  color: palegreen;
+  text-shadow: #666666;
+}
+
+#btn {
+  background: wheat;
+  display: inline-block;
 }
