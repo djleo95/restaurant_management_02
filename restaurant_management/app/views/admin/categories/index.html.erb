@@ -1,0 +1,19 @@
+<section>
+  <br>
+  <div class="col-md-8 col-md-offset-2" id="mainarea">
+  <h1><%= t ".title" %></h1>
+    <div class="titlebar">
+      <div class="name_holder"><b><%= t ".category" %></b></div>
+      <div class="option_holder"><b><%= t ".opition" %></b></div>
+    </div>
+    <ul class="sortable-list">
+      <% if @categories.any? %>
+        <%= render @categories %>
+        <br>
+      <% end %>
+    </ul>
+    <%= will_paginate @categories %>
+    <%= link_to t(".add_button"), new_admin_category_path,
+      class: "btn btn-primary" %>
+  </div>
+</section>

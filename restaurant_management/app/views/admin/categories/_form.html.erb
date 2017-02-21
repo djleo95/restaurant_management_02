@@ -1,0 +1,10 @@
+<%= form_for [:admin, @category] do |f| %>
+  <%= f.label :name, t(".name") %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <% if @category.new_record? %>
+    <%= f.submit t(".create_button"), class: "btn btn-primary" %>
+  <% else %>
+    <%= f.submit t(".update_button"), class: "btn btn-success" %>
+  <% end %>
+<% end %>

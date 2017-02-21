@@ -55,6 +55,7 @@ en:
     follow_us : Follow Us
     sunday: Sunday 
     time1: 10:30 AM - 10:00 PM
+
   error:
     signup: This form contain %{count}
     error: error
@@ -68,6 +69,9 @@ en:
     create_new_account: Create new account
     step3: Book a table!
     step2: Input your information!
+    category:
+      create_success: "Created category successfully"
+      update_success: "Updated category successfully."
   title:
     sign_up: Sign up
     login: Log in
@@ -105,4 +109,18 @@ en:
     bill: Bill
     table: Table
     revenue: Revenue
-    about_you: ABOUT YOU
+    categories:
+      index:
+        title: "Categories"
+        add_button: "Create category"
+        name: "Category"
+        opition: "Opition"
+      form:
+        name: "Category name:"
+        create_button: "Create"
+        update_button: "Update"
+      category:
+        view_button: "Details"
+        edit_button: "Edit"
+        delete_button: "Delete"
+        delete_warning: "Are you sure?"

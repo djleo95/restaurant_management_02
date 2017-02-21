@@ -82,8 +82,8 @@ ActiveRecord::Schema.define(version: 20170213020016) do
   end
 
   create_table "order_tables", force: :cascade do |t|
-    t.datetime "book_from"
-    t.datetime "book_to"
+    t.date     "from"
+    t.date     "to"
     t.integer  "table_id"
     t.integer  "target_id"
     t.string   "target_type"
@@ -129,9 +129,9 @@ ActiveRecord::Schema.define(version: 20170213020016) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.boolean  "isAdmin",         default: false
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.boolean  "isAdmin"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "password_digest"
   end
 
