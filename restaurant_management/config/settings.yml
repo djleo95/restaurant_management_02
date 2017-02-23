@@ -11,3 +11,7 @@ page:
   max: 9
 menu:
   number_item_in_page: 6
+review:
+  number_item_in_page: 5
+  size_box: 10x10
+     

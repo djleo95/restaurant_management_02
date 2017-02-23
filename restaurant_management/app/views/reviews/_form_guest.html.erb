@@ -1,0 +1,26 @@
+<%= form_for @guest, method: :post do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="col-sm-12 dropdown-buttons">
+    <%= f.fields_for :review do |review| %>
+      <div class="col-md-12 col-sm-12">
+        <%= review.text_area :content, size: Settings.review.size_box, class: "form-control", 
+          placeholder: t("review.input") %>
+      </div>
+    <% end %>
+    <div class="col-md-4 col-sm-4">
+      <%= f.text_field :name, class: "form-control",
+        placeholder: t("review.name") %>
+    </div>
+    <div class="col-md-4 col-sm-4">
+      <%= f.text_field :email, class: "form-control",
+        placeholder: t("review.email") %> 
+    </div>
+    <div class="col-md-4 col-sm-4">
+      <%= f.text_field :phone, class: "form-control",
+        placeholder: t("review.phone") %> 
+    </div>
+    <div class="col-sm-12">
+      <%= f.submit t("order_table.index.submit")%>
+    </div>
+  </div>
+<% end %>

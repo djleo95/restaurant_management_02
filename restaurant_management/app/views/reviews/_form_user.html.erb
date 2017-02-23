@@ -1,0 +1,12 @@
+<%= form_for @review, method: :post do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="col-sm-12 dropdown-buttons">
+    <div class="col-md-12 col-sm-12">
+      <%= f.text_area :content, size: Settings.review.size_box, class: "form-control", 
+        placeholder: (t "review.input") %>
+    </div>
+    <div class="col-sm-12">
+      <%= f.submit t("order_table.index.submit")%>
+    </div>
+  </div>
+<% end %>
