@@ -24,6 +24,8 @@ class OrderTablesController < ApplicationController
     if @order_table.save
       if params[:to_home]
         redirect_to root_path
+      else
+        redirect_to order_table_menus_path @order_table
       end
     else
       render :new

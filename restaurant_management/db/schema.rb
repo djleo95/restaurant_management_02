@@ -73,13 +73,13 @@ ActiveRecord::Schema.define(version: 20170207035507) do
   end
 
   create_table "order_dishes", force: :cascade do |t|
-    t.integer  "orderTable_id"
+    t.integer  "order_table_id"
     t.integer  "dish_id"
     t.integer  "quantity"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.index ["dish_id"], name: "index_order_dishes_on_dish_id"
-    t.index ["orderTable_id"], name: "index_order_dishes_on_orderTable_id"
+    t.index ["order_table_id"], name: "index_order_dishes_on_order_table_id"
   end
 
   create_table "order_tables", force: :cascade do |t|

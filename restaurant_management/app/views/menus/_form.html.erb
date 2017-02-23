@@ -1,0 +1,10 @@
+<%= form_for :book_dish, url: order_dishes_path(dish.id), method: :post do |f| %>
+  <div class="col-sm-6">
+    <%= f.number_field :quantity, min: Settings.table.minimum_value, 
+      max: Settings.table.maximum_value, class: "form-control", 
+      placeholder: t("menu.quantity") %>
+  </div>
+  <div class="col-sm-6">
+    <%= f.submit t "menu.submit" %>
+  </div>
+<% end %>

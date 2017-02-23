@@ -4,6 +4,20 @@
     <h3>
       <%= dish.name %> 
     </h3>
-    <span><%= dish.price %></span>
+    <h5><%= dish.price %></h5>
+    <% if params[:order_table_id] %>
+      <%= form_for :book_dish, url: order_dishes_path(), method: :post do |f| %>
+        <div class="col-sm-6">
+          <%= f.hidden_field :dish_id, value: dish.id %>
+          <%= f.hidden_field :order_table_id, value: params[:order_table_id] %>
+          <%= f.number_field :quantity, min: Settings.table.minimum_value, 
+            max: Settings.table.maximum_value, class: "form-control", 
+            placeholder: t("menu.quantity") %>
+        </div>
+        <div class="col-sm-6">
+          <%= f.submit t "menu.submit" %>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
