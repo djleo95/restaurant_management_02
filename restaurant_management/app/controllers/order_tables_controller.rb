@@ -1,6 +1,11 @@
 class OrderTablesController < ApplicationController
   def new
     @order_table = OrderTable.new
+    if params[:guest_id]
+      @guest = Guest.find_by id: params[:guest_id]
+    elsif current_user
+      @user = current_user
+    end
   end
 
   def create

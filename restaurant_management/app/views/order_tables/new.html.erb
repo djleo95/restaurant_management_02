@@ -8,7 +8,11 @@
         <h1 class="heading"><%= t "order_table.index.book_table" %></h1>
       </div>
       <div class="col-md-offset-1 col-md-10 col-sm-12">
-        <%= render "form" %>
+        <% if @guest %>
+          <%= render "form", object: @guest  %>
+        <% elsif @user %>
+          <%= render "form", object: @user  %>
+        <% end %>
       </div>
       <div class="col-md-2 col-sm-1"></div>
     </div>

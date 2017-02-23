@@ -1,11 +1,13 @@
-Phone_number:
+phone_number:
   min_length: 8
   max_length: 11
-Table:
+table:
   minimum_value: 1
   maximum_value: 20
-Capacity:
+capacity:
   minimum_value: 1
   maximum_value: 6
-Page:
+page:
   max: 9
+menu:
+  number_item_in_page: 6
