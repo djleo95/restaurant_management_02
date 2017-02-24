@@ -2,7 +2,7 @@ class Admin::StaffsController < ApplicationController
   before_action :find_staff, except: [:index, :new, :create]
 
   def index
-    @staffs = Staff.paginate page: params[:page], per_page: Settings.Page.max[1]
+    @staffs = Staff.paginate page: params[:page], per_page: Settings.page.max[1]
   end
 
   def destroy

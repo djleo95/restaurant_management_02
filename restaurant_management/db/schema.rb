@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20170207035507) do
   create_table "dishes", force: :cascade do |t|
     t.string   "name"
     t.integer  "price"
+    t.string   "image_link"
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

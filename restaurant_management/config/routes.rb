@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :order_tables, only: [:new, :create]
   end
   resources :tables, only: [:index]
+  resources :menus, only: [:index]
   resources :guests, only: [:new, :create] do
     resources :order_tables, only: [:new, :create]
   end

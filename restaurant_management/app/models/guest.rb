@@ -11,8 +11,8 @@ class Guest < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX}
 
   validates :phone, presence: true, numericality: true,
-    length: {minimum: Settings.Phone_number.min_length, 
-      maximum: Settings.Phone_number.max_length}
+    length: {minimum: Settings.phone_number.min_length, 
+      maximum: Settings.phone_number.max_length}
 
   private
   def downcase_email

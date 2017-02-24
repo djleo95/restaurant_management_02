@@ -29,10 +29,8 @@
                 <li><%= link_to t("admin.table"), "#" %></li>
                 <li><%= link_to t("admin.revenue"), "#" %></li>
               <% else %>
-                <li><%= link_to t("navbar.home"), root_path %></li>
                 <li><%= link_to t("navbar.food_gallery"), "#" %></li>
-                <li><%= link_to t("navbar.menu"), "#" %></li>
-                <li><%= link_to t("navbar.chefs"), "#" %></li>
+                <li><%= link_to t("navbar.menu"), menus_path %></li>
                 <li><%= link_to t("navbar.review"), "#" %></li>
               <% end %>
               <div class="dropdown">
@@ -47,10 +45,8 @@
                 </div>
               </div>
             <% else %>
-              <li><%= link_to t("navbar.home"), root_path %></li>
               <li><%= link_to t("navbar.food_gallery"), "#" %></li>
-              <li><%= link_to t("navbar.menu"), "#" %></li>
-              <li><%= link_to t("navbar.chefs"), "#" %></li>
+              <li><%= link_to t("navbar.menu"), menus_path %></li>
               <li><%= link_to t("navbar.review"), "#" %></li>
               <li><%= link_to t("navbar.login"), login_path %></li>
               <li id="signup"><%= link_to t("navbar.signup"), new_user_path %></li>
@@ -87,15 +83,6 @@
           </div>
         </div>
       </div>
-      <section id="copyright">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 col-sm-12">
-              <h3><%= t "restaurant_name" %></h3>
-            </div>
-          </div>
-        </div>
-      </section>
     </footer>
   </body>
 </html>
