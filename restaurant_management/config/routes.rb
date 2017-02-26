@@ -22,5 +22,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :staffs
     resources :categories
+    resources :bills
   end
 end

@@ -1,0 +1,37 @@
+<%= form_for [@guest, @bill_detail], url: new_admin_bill_path, method: :post do |f| %>
+  <div class="col-sm-12 dropdown-buttons">
+    <%= render "shared/error_messages", object: @bill %>
+    <div class="col-md-4 col-sm-4 text-center div_text">
+      <p><%= t "bill.staff" %></p>
+    </div>
+    <div class="col-md-4 col-sm-4 text-center div_text">
+      <p><%= t "order_table.index.date" %></p>
+    </div>
+    <div class="col-md-4 col-sm-4 text-center div_text">
+      <p><%= t "order_table.index.from" %></p>
+    </div>
+    <div class="col-md-4 col-sm-4 text-center div_text">
+      <p><%= t "order_table.index.to" %></p>
+    </div>
+    <div class="col-md-4 col-sm-4">
+      <%= f.date_field :day ,value: Date.today, class: "form-control" %>
+    </div>
+    <div class="col-md-4 col-sm-4">
+      <%= f.date_field :day ,value: Date.today, class: "form-control" %>
+    </div>
+    <div class="col-md-4 col-sm-4">
+      <%= f.time_field :book_from, class: "form-control",
+                       placeholder: (t "order_table.index.from") %>
+    </div>
+    <div class="col-md-4 col-sm-4">
+      <%= f.time_field :book_to, class: "form-control",
+                       placeholder: (t "order_table.index.to") %>
+    </div>
+    <div class="col-sm-6">
+      <%= f.submit t("order_table.index.submit"), name: "to_home" %>
+    </div>
+    <div class="col-sm-6">
+      <%= f.submit t "order_table.index.submit_with_book_dishes" %>
+    </div>
+  </div>
+<% end %>

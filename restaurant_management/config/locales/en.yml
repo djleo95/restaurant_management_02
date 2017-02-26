@@ -161,3 +161,6 @@ en:
     cancel: Cancel
     success: success
     fail: fail
+  bill:
+    title: Bill
+    staff: Staff
