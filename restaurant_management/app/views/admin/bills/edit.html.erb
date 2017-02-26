@@ -1,0 +1,13 @@
+<% provide :title, t("admin.bill_edit") %>
+<section class="center-block">
+  <h1 class="text-center"><%= t "admin.bill" %></h1>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <% if @target_type == "Guest" %>
+        <%= render "guest" %>
+      <% elsif @target_type == "User" %>
+        <%= render "user" %>
+      <% end %>
+    </div>
+  </div>
+</section>

@@ -108,6 +108,7 @@ en:
   admin:
     menu: Menu
     cate: Category
+    bill_add: Add New Bill
     staff: Staff
     staff_add: Add Staff
     staff_edit: Edit Staff
@@ -117,6 +118,12 @@ en:
     staff_work_days_input: Input staff working days
     working: Working day
     bill: Bill
+    bill_id: Bill ID
+    bill_guest_type: Guest type
+    bill_guest: Guest name
+    bill_staff: Staff
+    bill_price: Price
+    bill_edit: Edit Bill
     table: Table
     revenue: Revenue
     categories:
@@ -164,3 +171,6 @@ en:
   bill:
     title: Bill
     staff: Staff
+    guest: Guest
+    user: User
+    ok: OK

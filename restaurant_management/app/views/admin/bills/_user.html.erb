@@ -1,0 +1,39 @@
+<%= form_for [:admin, @bill] do |f| %>
+  <%= render "shared/error_messages", object: @bill %>
+  <%= f.label "Bill for" %>
+  <%= f.select :target_type, [["User"]] %>
+  <%= f.label :staff_id %>
+  <%= f.select :staff_id do %>
+    <% @staff.each do |c| -%>
+      <%= content_tag(:option, c.first, value: c.last) %>
+    <% end %>
+  <% end %>
+  <%= f.label :user_id %>
+  <%= f.select :target_id do %>
+    <% @user.each do |c| -%>
+      <%= content_tag(:option, c.first, value: c.last) %>
+    <% end %>
+  <% end %>
+  <%= f.fields_for :bill_details do |bill_detail| %>
+    <div class="parent">
+      <div class="left">
+        <%= bill_detail.label :dish_id %>
+        <%= bill_detail.select :dish_id, class: "form-control" do %>
+          <% @dish.each do |c| -%>
+            <%= content_tag(:option, c.first, value: c.last) %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="right">
+        <%= bill_detail.label :quantity %>
+        <%= bill_detail.number_field :quantity, class: "form-control" %>
+      </div>
+    </div>
+    <div class="checkbox">
+      <%= bill_detail.check_box :_destroy %>
+      <%= bill_detail.label :_destroy, "Remove this entry" %>
+    </div>
+  <% end %>
+
+  <%= f.submit t "bill.ok", class: "btn btn-primary" %>
+<% end %>

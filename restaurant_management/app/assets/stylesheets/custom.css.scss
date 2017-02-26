@@ -746,3 +746,13 @@ a:hover{
   display: inline-block;
   background: #fffc94;
 }
+
+.left {
+  float: left;
+  width: 700px;
+  height: 70px;
+}
+.right {
+  overflow: hidden;
+  height: 70px;
+}

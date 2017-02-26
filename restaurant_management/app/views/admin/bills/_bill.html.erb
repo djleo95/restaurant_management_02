@@ -1,0 +1,10 @@
+<tr>
+  <td><%= link_to bill.id, edit_admin_bill_path(bill) %></td>
+  <td><%= bill.target_type %></td>
+  <td><%= bill.target.name %></td>
+  <td><%= bill.staff.name %></td>
+  <td><%= bill.total_price %></td>
+  <td><%= link_to t("staff.del"), admin_bill_path(bill),
+    method: :delete, id: "btn", class: "btn",
+    data: {confirm: t("dialog.confirm_delete")} %></td>
+</tr>

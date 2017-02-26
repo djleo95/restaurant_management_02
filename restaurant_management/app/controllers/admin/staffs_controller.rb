@@ -1,7 +1,7 @@
 class Admin::StaffsController < ApplicationController
   before_action :verify_admin, only: [:update, :create, :destroy]
   before_action :find_staff, except: [:index, :new, :create]
-  before_action :get_role, only: [:new, :edit]
+  before_action :load_role, only: [:new, :edit]
 
   def index
     @staffs = Staff.paginate page: params[:page], per_page: Settings.page.max[1]
@@ -15,6 +15,7 @@ class Admin::StaffsController < ApplicationController
     @staff = Staff.new staff_params
     if @staff.save
       flash[:success] = t "flash.new_staff"
+      StaffMailer.staff_email(@staff).deliver
       redirect_to admin_staffs_path
     else
       render :new
@@ -53,7 +54,7 @@ class Admin::StaffsController < ApplicationController
       :work_days, :role_id
   end
 
-  def get_role
+  def load_role
     @role = Role.all.collect { |p| [ p.name, p.id ] }
   end
 end

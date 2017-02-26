@@ -4,4 +4,5 @@ class Bill < ApplicationRecord
 
   belongs_to :staff
   belongs_to :target, polymorphic: true
+  accepts_nested_attributes_for :bill_details, :allow_destroy => true
 end

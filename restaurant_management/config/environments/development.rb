@@ -27,7 +27,17 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+    :address  => "smtp.sendgrid.net",
+    :port  => 587,
+    :user_name  => 'apikey',
+    :password  => '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',
+    :authentication  => "plain",
+    :enable_starttls_auto => true
+  }
 
   config.action_mailer.perform_caching = false
 

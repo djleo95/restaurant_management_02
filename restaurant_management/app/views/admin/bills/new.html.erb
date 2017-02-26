@@ -8,9 +8,21 @@
         <h1 class="heading"><%= t "bill.title" %></h1>
       </div>
       <div class="col-md-offset-1 col-md-10 col-sm-12">
-        <%= render "form" %>
+        <% if @target_type == "Guest" %>
+          <%= render "guest" %>
+        <% elsif @target_type == "User" %>
+          <%= render "user" %>
+        <% elsif @target_type == "none" %>
+          <%= form_for [:admin, @bill], url: new_admin_bill_path, method: :get do |f| %>
+            <%= f.select :target_type do %>
+              <% @select.each do |c| -%>
+                <%= content_tag(:option, c.first, value: c.first) %>
+              <% end %>
+            <% end %>
+            <%= f.submit "OK", class: "btn btn-primary" %>
+          <% end %>
+        <% end %>
       </div>
-      <div class="col-md-2 col-sm-1"></div>
     </div>
   </div>
 </section>

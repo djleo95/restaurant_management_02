@@ -1,0 +1,26 @@
+<section>
+  <div class="container">
+    <div class="btn" id="add_btn">
+      <%= link_to t("admin.bill_add"), new_admin_bill_path %>
+    </div>
+    <table class="table">
+      <thead>
+      <tr>
+        <th class="col-md-1"><%= t "admin.bill_id" %></th>
+        <th class="col-md-1"><%= t "admin.bill_guest_type" %></th>
+        <th class="col-md-1"><%= t "admin.bill_guest" %></th>
+        <th class="col-md-1"><%= t "admin.bill_staff" %></th>
+        <th class="col-md-1"><%= t "admin.bill_price" %></th>
+        <th class="col-md-1"><%= t "staff.action" %></th>
+      </tr>
+      </thead>
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <tbody class>
+      <%= render @bills %>
+      <%= will_paginate @bills%>
+      </tbody>
+    </table>
+  </div>
+</section>
