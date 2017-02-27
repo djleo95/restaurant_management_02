@@ -69,8 +69,17 @@ en:
     step3: Book a table!
     step2: Input your information!
     category:
+      find_fail: "Category not found."
       create_success: "Created category successfully"
       update_success: "Updated category successfully."
+      delete_success: "Deleted category successfully!"
+      delete_fail: "Failed. Something's wrong."
+    dish:
+      find_fail: "Dish not found."
+      create_success: "Created dish successfullly!"
+      update_success: "Updated dish successful!"
+      destroy_success: "Deleted dish successfully!"
+      destroy_fail: "Failed. Something's wrong."
     staff: Don't have any staff!
     book_success: Book dish success!
   title:
@@ -103,8 +112,10 @@ en:
     next: Next
     about_you: About you
   admin:
+    search: "Search"
     menu: Menu
     cate: Category
+    dish: Dish
     staff: Staff
     working: Working day
     bill: Bill
@@ -112,20 +123,61 @@ en:
     revenue: Revenue
     categories:
       index:
-        title: "Categories"
-        add_button: "Create category"
+        title: "Categories manager"
+        add_button: "Add category"
         name: "Category"
         opition: "Opition"
+        input: "Enter category name"
+        search: Search
+        search_fail: "There are no category containing:"
       form:
         name: "Category name:"
         create_button: "Create"
         update_button: "Update"
+      show:
+        add_dish_button: "Add dish"
+        empty: "This category hasn't any dish. "
       category:
         view_button: "Details"
         edit_button: "Edit"
         delete_button: "Delete"
         delete_warning: "Are you sure?"
     about_you: ABOUT YOU
+    dishes:
+      index:
+        title: Dishes manager
+        name: Dish
+        add_dish_button: "Creat new dish"
+        input: "Enter dish name"
+        search: Search
+        search_fail: "There are no dish containing: "
+      show:
+        title: Dish information
+        field: Field
+        value: Value
+        name: "Dish"
+        price: "Price"
+        money: $
+        category: "Category"
+        description: Description
+      form:
+        name: "Dish name:"
+        price: "Price:"
+        description: Description
+        category: "Category"
+      dish:
+        money: $
+        view_dish_button: "View"
+        add_dish_button: "Add"
+        edit_dish_button: "Edit"
+        delete_dish_button: "Delete"
+        delete_warning: "Are you sure?"
+  button:
+    view: "Details"
+    add: "Add"
+    update: "Update"
+    edit: "Edit"
+    delete: "Delete"
   staff:
     name: Name
     salary: Salary

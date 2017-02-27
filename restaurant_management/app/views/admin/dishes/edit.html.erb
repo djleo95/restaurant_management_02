@@ -1,0 +1,8 @@
+<section>
+  <div id="edit" class="col-sm-6">
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <%= render "form" %>
+  </div>
+</section>
