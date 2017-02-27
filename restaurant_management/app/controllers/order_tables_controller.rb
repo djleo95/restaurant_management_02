@@ -14,14 +14,18 @@ class OrderTablesController < ApplicationController
     to = params[:order_table][:day] + " " + params[:order_table][:book_to]
     @order_table.book_from = from.to_time
     @order_table.book_to = to.to_time
+    @target = nil
     if params[:guest_id]
       @order_table.target_type = Guest.name
       @order_table.target_id = params[:guest_id]
+      @target = Guest.find_by id: params[:guest_id]
     elsif params[:user_id]
       @order_table.target_type = User.name
       @order_table.target_id = params[:user_id]
+      @target = current_user
     end
     if @order_table.save
+      BookMailer.book_email(@target).deliver
       if params[:to_home]
         redirect_to root_path
       else

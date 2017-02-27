@@ -15,6 +15,7 @@ gem "bcrypt-ruby", "3.1.1.rc1", :require => "bcrypt"
 gem "config"
 gem "will_paginate", "3.1.0"
 gem "faker", "1.6.6"
+gem "sendgrid"
 
 group :development, :test do
   gem "byebug", platform: :mri

@@ -145,6 +145,10 @@ en:
     del: Delete
   dialog:
     confirm_delete: Delete? Are you sure?
+    new_staff: We just got a new staff
+    new_dish: Please checkout our newest dish
+    newest_dish: Please checkout our newest dish
+    here: here.
   review:
     review: Reviews
     write_review: Write review

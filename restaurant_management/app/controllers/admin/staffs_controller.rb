@@ -1,4 +1,5 @@
 class Admin::StaffsController < ApplicationController
+  before_action :verify_admin, only: [:update, :create, :destroy]
   before_action :find_staff, except: [:index, :new, :create]
   before_action :get_role, only: [:new, :edit]
 
