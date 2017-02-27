@@ -61,3 +61,8 @@ users.each do |user|
   Review.create!(content: content,
     target_type: "User", target_id: user.id)
 end
+
+20.times do |n|
+  Table.create!(description: "hihi",
+    capacity: (n%4 + 1), table_code: (n + 1) )
+end

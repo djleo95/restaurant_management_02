@@ -33,12 +33,7 @@ en:
     gallery4_name: Lemon-Rosemary Salad
     gallery4_detail: Chicken / Rosemary / Green
     gallery5_name: Lemon-Rosemary Pizza
-    gallery5_detail: Pasta / Rosemary / Green
-  menu:
-    menu: Special Menu
-    dish1_name: Lemon-Rosemary Vegetable ................ 
-    dish1_price: $20.50
-    dish1_discription: Chicken / Rosemary / Lemon
+    gallery5_detail: Pasta / Rosemary / Green 
   chefs:
     meet_chefs: Meet Zentro chefs
     chef1_name: Thanya
@@ -57,11 +52,14 @@ en:
     time1: 10:30 AM - 10:00 PM
   menu:
     menu: MENU
+    submit: Submit
+    quantity: Quantity
   error:
     signup: This form contain %{count}
     error: error
     errors: errors
     _error: This form contain
+    book_fails: An error occurred. Book dish fails!
   flash:
     wrong_pass: Invalid email/password combination
     user_not_exist: User not exist
@@ -74,6 +72,7 @@ en:
       create_success: "Created category successfully"
       update_success: "Updated category successfully."
     staff: Don't have any staff!
+    book_success: Book dish success!
   title:
     sign_up: Sign up
     login: Log in
