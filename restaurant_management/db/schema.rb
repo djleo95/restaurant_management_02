@@ -83,8 +83,8 @@ ActiveRecord::Schema.define(version: 20170207035507) do
   end
 
   create_table "order_tables", force: :cascade do |t|
-    t.date     "from"
-    t.date     "to"
+    t.datetime "book_from"
+    t.datetime "book_to"
     t.integer  "table_id"
     t.integer  "target_id"
     t.string   "target_type"

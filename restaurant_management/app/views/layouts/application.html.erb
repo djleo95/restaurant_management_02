@@ -31,7 +31,7 @@
               <% else %>
                 <li><%= link_to t("navbar.food_gallery"), "#" %></li>
                 <li><%= link_to t("navbar.menu"), menus_path %></li>
-                <li><%= link_to t("navbar.review"), "#" %></li>
+                <li><%= link_to t("navbar.review"), reviews_path %></li>
               <% end %>
               <div class="dropdown">
                 <button class="dropbtn"><%= t "navbar.account" %></button>
@@ -47,7 +47,7 @@
             <% else %>
               <li><%= link_to t("navbar.food_gallery"), "#" %></li>
               <li><%= link_to t("navbar.menu"), menus_path %></li>
-              <li><%= link_to t("navbar.review"), "#" %></li>
+              <li><%= link_to t("navbar.review"), reviews_path %></li>
               <li><%= link_to t("navbar.login"), login_path %></li>
               <li id="signup"><%= link_to t("navbar.signup"), new_user_path %></li>
             <% end %>

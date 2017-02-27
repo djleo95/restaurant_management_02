@@ -1,0 +1,16 @@
+<section id="review" class="parallax-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-2 col-md-12 col-sm-12 text-center">
+        <h1 class="heading"><%= t "review.review"%></h1>
+        <div class="apple_pagination">
+          <%= will_paginate @dishes, container: false %>
+        </div>
+      </div>
+      <%= render @reviews %>
+    </div>
+    <div class="text-center">
+      <%= link_to t("review.write_review"), new_review_path, class: "btn3" %>
+    </div>
+  </div>
+</section>

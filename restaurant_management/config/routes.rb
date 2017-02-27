@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :guests, only: [:new, :create] do
     resources :order_tables, only: [:new, :create]
   end
+  resources :reviews, only: [:new, :create, :index]
   namespace :admin do
     resources :staffs
     resources :categories

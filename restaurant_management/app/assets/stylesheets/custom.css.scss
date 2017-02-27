@@ -107,6 +107,18 @@ hr {
   outline: none;
 }
 
+.btn3 {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 500;
+  border: none;
+  background:#0a6f42;
+  padding: 16px;
+  outline: none;
+  padding-top: 10px;
+}
+
 footer {
   -webkit-background-size: cover;
   background-size: cover;
@@ -665,9 +677,40 @@ a:hover{
 
   a {
     text-decoration: none;
-    color: black; 
+    color: #fff; 
   }
   a:hover, a:focus {
     text-decoration: underline; 
+  }
+}
+
+#review {
+  h4 {
+  line-height: 1.5;
+  }
+  .col-md-12 {
+  }
+  
+  .col-md-10 {
+    background-color: #1a2b34;
+    border: 1px solid #fff;
+    height: 80px;
+  }
+
+  .col-md-2 {
+    height: 90px;
+  }
+
+  span {
+    color: #5C5C5C;
+  }
+
+  img {
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 150px;
+    border:2px solid #fff;
   }
 }

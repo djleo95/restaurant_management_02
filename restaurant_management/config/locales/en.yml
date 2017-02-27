@@ -137,3 +137,11 @@ en:
     del: Delete
   dialog:
     confirm_delete: Delete? Are you sure?
+  review:
+    review: Reviews
+    write_review: Write review
+    input: Input your review.
+    name: Name
+    email: Email
+    phone: Phone number
+    my_review: My review

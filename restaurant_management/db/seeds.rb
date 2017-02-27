@@ -46,3 +46,18 @@ Dish.create! ([
     image_link: "http://www.rd.com/wp-content/uploads/sites/2/2011/03/WORST-FOODS-YOU-CAN-EAT-03-sl.jpg",
     category_id: 1}
 ])
+
+99.times do |n|
+  name = Faker::Name.name
+  email = "example-#{n+1}@railstutorial.org"
+  password = "123123"
+  User.create!(name: name,
+    email: email, password: "123123",
+    password_confirmation: password, isAdmin: false)
+end
+users = User.all.take 100
+users.each do |user| 
+  content = Faker::Lorem.sentence 5
+  Review.create!(content: content,
+    target_type: "User", target_id: user.id)
+end

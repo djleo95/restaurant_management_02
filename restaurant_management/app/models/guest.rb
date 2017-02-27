@@ -1,6 +1,6 @@
 class Guest < ApplicationRecord
   has_many :order_tables, as: :target
-  has_many :reviews, as: :target
+  has_one :review, as: :target
   has_many :bills, as: :target
 
   before_save :downcase_email
@@ -13,6 +13,8 @@ class Guest < ApplicationRecord
   validates :phone, presence: true, numericality: true,
     length: {minimum: Settings.phone_number.min_length, 
       maximum: Settings.phone_number.max_length}
+
+  accepts_nested_attributes_for :review
 
   private
   def downcase_email
