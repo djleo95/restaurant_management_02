@@ -1,7 +1,10 @@
 <section>
 <br>
   <div class="col-md-8 col-md-offset-2" id="mainarea">
-  <h1><%= @category.name %></h1>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <h1><%= @category.name %></h1>
     <div class="titlebar">
       <div class="name_holder"><b><%= t ".dish" %></b></div>
       <div class="option_holder"><b><%= t ".opition" %></b></div>

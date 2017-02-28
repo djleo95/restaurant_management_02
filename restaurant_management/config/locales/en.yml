@@ -80,6 +80,13 @@ en:
       update_success: "Updated dish successful!"
       destroy_success: "Deleted dish successfully!"
       destroy_fail: "Failed. Something's wrong."
+    menu:
+      find_fail: "Menu not found."
+      create_success: "Created menu successfully."
+      update_success: "Updated menu successfully."
+      destroy_success: "Deleted menu successfully."
+      destroy_fail: "Failed. Something's wrong."
+    staff: Don't have any staff!
     staff: Don't have any staff!
     book_success: Book dish success!
   title:
@@ -172,6 +179,40 @@ en:
         edit_dish_button: "Edit"
         delete_dish_button: "Delete"
         delete_warning: "Are you sure?"
+    menus:
+      index:
+        title: Menus manager
+        add_menu_button: Add menu
+        input: "Enter menu name"
+        search: Search
+      new:
+        title: Create menu
+        name: "Menu name:"
+        description: "Description:"
+      show:
+        title: Menu information
+        field: Field
+        value: Value
+        name: Menu
+        dishes: LIST DISHES
+        description: Description
+        edit_menu_button: Edit menu
+        delete_dish_button: Delete
+        delete_warning: Are you sure?
+      form:
+        create_menu_button: "Create menu"
+        update_menu_button: "Update menu"
+        name: "Menu name:"
+        description: "Description:"
+        dishes: "Choose dishes:"
+      edit:
+        delete_menu_button: "Delete this menu"
+      menu:
+        view_menu_button: "Details"
+        edit_menu_button: "Edit"
+        delete_menu_button: "Delete"
+        delete_warning: "Are you sure?"
+        dishes: View dishes
   button:
     view: "Details"
     add: "Add"

@@ -25,5 +25,8 @@ Rails.application.routes.draw do
       resources :dishes
     end
     resources :dishes
+    resources :menus do
+      resources :dishes, only: [:destroy]
+    end
   end
 end

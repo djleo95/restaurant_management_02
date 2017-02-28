@@ -3,6 +3,7 @@ class Admin::DishesController < ApplicationController
   before_action :verify_admin, only: [:update, :create, :destroy]
   before_action :load_category, except: [:index, :show, :destroy]
   before_action :find_category, except: [:index]
+  before_action :find_menu_dish, only: [:destroy, :new]
   before_action :find_dish, except: [:index, :new]
 
   def index
@@ -56,15 +57,22 @@ class Admin::DishesController < ApplicationController
   end
 
   def destroy
-    if @dish.destroy
-      flash[:success] = t "flash.dish.destroy_success"
+    if @menu
+      @menu.dishes.include?(@dish)
+      if @menu.dishes.delete @dish
+        redirect_to admin_menu_path @menu
+      end
     else
-      flash[:danger] = t "flash.dish.destroy_fail"
-    end
-    if @category
-      redirect_to admin_category_path @category
-    else
-      redirect_to admin_dishes_path
+      if @dish.destroy
+        flash[:success] = t "flash.dish.destroy_success"
+      else
+        flash[:danger] = t "flash.dish.destroy_fail"
+      end
+      if @category
+        redirect_to admin_category_path @category
+      else
+        redirect_to admin_dishes_path
+      end
     end
   end
 
@@ -76,7 +84,7 @@ class Admin::DishesController < ApplicationController
   def find_category
     @category = Category.find_by id: params[:category_id]
     unless @category
-      flash[:danger] = t "flash.category.find_fail"
+      # flash[:danger] = t "flash.category.find_fail"
     end
   end
 
@@ -87,7 +95,18 @@ class Admin::DishesController < ApplicationController
       Dish.find_by id: params[:id]
     end
     unless @dish
-      flash[:danger] = t "flash.dish.find_fail"
+      # flash[:danger] = t "flash.dish.find_fail"
+    end
+  end
+
+  def find_menu_dish
+    @menu = Menu.find_by id: params[:menu_id]
+    unless @menu
+      # flash[:danger] = t "flash.menu.find_fail"
+    end
+    @dish = Dish.find_by id: params[:id]
+    unless @dish
+      # flash[:danger] = t "flash.dish.find_fail"
     end
   end
 

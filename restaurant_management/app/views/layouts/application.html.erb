@@ -21,7 +21,7 @@
           <ul class="nav navbar-nav navbar-right">
             <% if logged_in? %>
               <% if @current_user.isAdmin? %>
-                <li><%= link_to t("admin.menu"), "#" %></li>
+                <li><%= link_to t("admin.menu"), admin_menus_path %></li>
                 <li><%= link_to t("admin.cate"), admin_categories_path %></li>
                 <li><%= link_to t("admin.dish"), admin_dishes_path %></li>
                 <li><%= link_to t("admin.staff"), admin_staffs_path %></li>

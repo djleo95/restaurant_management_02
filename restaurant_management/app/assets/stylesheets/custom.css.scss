@@ -532,6 +532,12 @@ span.picture {
     text-transform: uppercase;
     text-align: center;
   }
+  h2 {
+    color: yellow;
+    font-size: 30px;
+    font-style: bolder;
+    text-align: center;
+  }
   h4 {
     color: yellow;
     font-size: 25px;
@@ -837,6 +843,12 @@ a:hover{
   .default_dg_label {
     font-size: 22px;
   }
+  .dg1 {
+    width: 70%;
+  }
+  .dg2 {
+    width: 30%;
+  }
   img {
     width: 25px;
     height: 25px;
@@ -878,5 +890,36 @@ a:hover{
     border-radius: .6rem;
     transition: background .3s;
     width: 70%;
+  }
+}
+
+#menu {
+  margin-bottom: 20px;
+  font-size: 18px;
+  label {
+    font-size: 18px;
+    display: inline-block;
+    margin: 0;
+  }
+  input[type=checkbox]{
+    margin: 0 0 0 5px;
+    font-size: 18px;
+    width: 13px;
+    height: 13px;
+    position: relative;
+    *overflow: hidden;
+  }
+  input, textarea {
+    border: none;
+  }
+  label {
+    color: yellow
+  }
+}
+
+#choose {
+  label {
+    color: white;
+    font-size: 16px;
   }
 }

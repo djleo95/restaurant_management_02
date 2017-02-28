@@ -1,0 +1,32 @@
+<section>
+  <br>
+  <div class="col-md-8 col-md-offset-2" id="mainarea">
+    <h1><%= t ".title" %></h1>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <%= form_tag admin_menus_path, method: :get, class: "searchform" do %>
+      <%= text_field_tag :search, params[:search],
+        placeholder: t(".input"), class: "text-input" %>
+      <%= submit_tag t(".search"), :name => nil, class: "button" %>
+    <% end %>
+    <br>
+    <table class="default_dg_table">
+      <tbody>
+        <tr class="dg_tr" style="" id="di_row_">
+          <th class="default_dg_th dg_center dg_nowrap dg1"><%= t ".name" %></th>
+          <th class="default_dg_th dg_center dg_nowrap dg2" colspan="3">
+            <%= t ".opition" %>
+          </th>
+        </tr>
+        <% if @menus.any? %>
+          <%= render @menus %>
+          <br>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+    <%= link_to t(".add_menu_button"), new_admin_menu_path,
+      class: "btn btn-primary col-md-2 col-md-offset-5" %>
+  </div>
+</section>

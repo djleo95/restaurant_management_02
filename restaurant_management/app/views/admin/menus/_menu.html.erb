@@ -1,0 +1,15 @@
+<tr class="dg_tr" id="di_row_0">
+  <td class="default_dg_td dg_left dg_nowrap dg1"><%= menu.name %></td>
+  <td class="default_dg_td dg_center dg_nowrap">
+    <%= link_to t(".view_menu_button"),
+      admin_menu_path(menu) %>
+  </td>
+  <td class="default_dg_td dg_center dg_nowrap">
+    <%= link_to t(".edit_menu_button"),
+      edit_admin_menu_path(menu) %>
+  </td>
+  <td class="default_dg_td dg_center dg_nowrap img">
+    <%= link_to image_tag("http://icons.iconarchive.com/icons/saki/nuoveXT/128/Actions-button-cancel-icon.png"), admin_menu_path(menu),
+      method: :delete, data: {confirm: t(".delete_warning")} %>
+  </td>
+</tr>
