@@ -1,0 +1,32 @@
+<section id="new">
+  <h1><%= t ".title" %></h1>
+  <div class="col-md-8 col-md-offset-2">
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <table dir="ltr" class="default_dg_table">
+      <tbody>
+        <tr class="dg_tr" id="di_row_">
+          <th class="default_dg_th dg_center dg_nowrap"><b><%= t ".field" %></b></th>
+          <th class="default_dg_th dg_center dg_nowrap"><b><%= t ".value" %></b></th>
+        </tr>
+        <tr class="dg_tr" id="di_row_0">
+          <td class="default_dg_td dg_left dg_nowrap"><b><%= t ".category" %></b></td>
+          <td class="default_dg_td dg_left"><%= @dish.category.name %></td>
+        </tr>
+        <tr class="dg_tr" id="di_row_0">
+          <td class="default_dg_td dg_left dg_nowrap"><b><%= t ".name" %></b></td>
+          <td class="default_dg_td dg_left"><%= @dish.name %></td>
+        </tr>
+        <tr class="dg_tr" id="di_row_0">
+          <td class="default_dg_td dg_left dg_nowrap"><b><%= t ".description" %></b></td>
+          <td class="default_dg_td dg_left"><%= @dish.description %></td>
+        </tr>
+        <tr class="dg_tr" id="di_row_0">
+          <td class="default_dg_td dg_left dg_nowrap"><b><%= t ".price" %></b></td>
+          <td class="default_dg_td dg_left"><%= t ".money" %><%= @dish.price %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

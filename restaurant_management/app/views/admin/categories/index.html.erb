@@ -1,8 +1,23 @@
 <section>
   <br>
   <div class="col-md-8 col-md-offset-2" id="mainarea">
-  <h1><%= t ".title" %></h1>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <h1><%= t ".title" %></h1>
+    <%= form_tag admin_categories_path, method: :get, class: "searchform" do %>
+      <%= text_field_tag :search, params[:search],
+        placeholder: t(".input"), class: "text-input" %>
+      <%= submit_tag t(".search"), :name => nil, class: "button" %>
+    <% end %>
+    <div class="clearfix"></div>
+    <% if @categories.blank? %>
+      <h4><%= t ".search_fail" %> <%= params[:search] %></h4>
+    <% end %>
+    <br>
+    <div class="clearfix"></div>
     <div class="titlebar">
+    <div class="clearfix"></div>
       <div class="name_holder"><b><%= t ".category" %></b></div>
       <div class="option_holder"><b><%= t ".opition" %></b></div>
     </div>
@@ -10,10 +25,10 @@
       <% if @categories.any? %>
         <%= render @categories %>
         <br>
+        <%= will_paginate @categories %>
       <% end %>
     </ul>
-    <%= will_paginate @categories %>
     <%= link_to t(".add_button"), new_admin_category_path,
-      class: "btn btn-primary" %>
+      class: "btn btn-primary col-md-2 col-md-offset-5" %>
   </div>
 </section>

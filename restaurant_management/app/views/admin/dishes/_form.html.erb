@@ -1,0 +1,22 @@
+<%= form_for [:admin, @category, @dish] do |f| %>
+  <%= f.label :name, t(".name") %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :price, t(".price") %>
+  <%= f.text_field :price, class: "form-control" %>
+
+  <%= f.label :description, t(".description") %>
+  <%= f.text_area :description, class: "form-control" %>
+
+  <% unless @category %>
+    <%= f.label :category_id, t(".category") %>
+    <%= f.select :category_id, @categories, include_blank: false,
+      selected: :category_id, class: "form-control" %>
+  <% end %>
+
+  <% if @dish.new_record? %>
+    <%= f.submit t("button.add"), class: "btn btn-primary" %>
+  <% else %>
+    <%= f.submit t("button.update"), class: "btn btn-success" %>
+  <% end %>
+<% end %>

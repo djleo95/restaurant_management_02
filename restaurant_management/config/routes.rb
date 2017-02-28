@@ -21,7 +21,13 @@ Rails.application.routes.draw do
   resources :reviews, only: [:new, :create, :index]
   namespace :admin do
     resources :staffs
-    resources :categories
     resources :bills
+    resources :categories do
+      resources :dishes
+    end
+    resources :dishes
+    resources :menus do
+      resources :dishes, only: [:destroy]
+    end
   end
 end

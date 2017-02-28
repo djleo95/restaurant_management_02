@@ -1,4 +1,21 @@
 <section>
 <br>
-<div id="edit"><%= @category.name %></div>
+  <div class="col-md-8 col-md-offset-2" id="mainarea">
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <h1><%= @category.name %></h1>
+    <div class="titlebar">
+      <div class="name_holder"><b><%= t ".dish" %></b></div>
+      <div class="option_holder"><b><%= t ".opition" %></b></div>
+    </div>
+    <ul class="sortable-list">
+      <% if @category.dishes.any? %>
+        <%= render @category.dishes %>
+      <% end %>
+    </ul>      
+    <br><br>
+    <%= link_to t(".add_dish_button"), new_admin_category_dish_path(@category),
+      class: "btn btn-primary" %>
+  </div>
 </section>

@@ -1,0 +1,21 @@
+<%= form_for [:admin, @menu] do |f| %>
+  <%= f.label :name, t(".name") %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :description, t(".description") %>
+  <%= f.text_area :description, class: "form-control" %>
+
+  <%= f.label :dishes, t(".dishes") %>
+  <% Dish.all.each do |dish| %>
+    <div id="choose">
+      <%= check_box_tag "menu[dish_ids][]", dish.id, @menu.dishes.include?(dish) %>
+      <%= label_tag :dish_ids, dish.name %>
+    </div>
+  <% end %>
+  <br>
+  <% if @menu.new_record? %>
+    <%= f.submit t(".create_menu_button"), class: "btn btn-primary" %>
+  <% else %>
+    <%= f.submit t(".update_menu_button"), class: "btn btn-success" %>
+  <% end %>
+<% end %>

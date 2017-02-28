@@ -1,0 +1,40 @@
+<section>
+  <br>
+  <div class="col-md-8 col-md-offset-2" id="mainarea">
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <h1><%= t ".title" %></h1>
+    <%= form_tag admin_dishes_path, method: :get, class: "searchform" do %>
+      <%= text_field_tag :search, params[:search],
+        placeholder: t(".input"), class: "text-input" %>
+      <%= submit_tag t(".search"), :name => nil, class: "button" %>
+    <% end %>
+    <div class="clearfix"></div>
+    <% if @dishes.blank? %>
+      <h4><%= t ".search_fail" %><%= params[:search] %></h4>
+    <% end %>
+    <table class="default_dg_table">
+      <tbody>
+        <tr class="dg_tr" style="" id="di_row_">
+          <th class="default_dg_th dg_center dg_nowrap"><%= t ".name" %></th>
+          <th class="default_dg_th dg_center dg_nowrap">
+            <%= t ".category" %>
+          </th>
+          <th class="default_dg_th dg_center dg_nowrap"><%= t ".price" %></th>
+          <th class="default_dg_th dg_center dg_nowrap" colspan="3">
+            <%= t ".opition" %>
+          </th>
+        </tr>
+        <% if @dishes.any? %>
+          <%= render @dishes %>
+          <br>
+          <%= will_paginate @dishes %>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+    <%= link_to t(".add_dish_button"), new_admin_dish_path,
+      class: "btn btn-primary col-md-offset-5" %>
+  </div>
+</section>

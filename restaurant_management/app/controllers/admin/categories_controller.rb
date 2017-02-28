@@ -1,16 +1,31 @@
 class Admin::CategoriesController < ApplicationController
+  before_action :logged_in_user
   before_action :verify_admin, only: [:update, :create, :destroy]
   before_action :find_category, except: [:index, :new, :create]
 
   def index
-    @categories = Category.paginate page: params[:page]
+    @categories = if params[:search]
+      Category.search params[:search]
+    else
+      Category.all
+    end.paginate page: params[:page]
+  end
+
+  def show
   end
 
   def new
     @category = Category.new
   end
 
-  def show
+  def create
+    @category = Category.new category_params
+    if @category.save
+      flash[:success] = t "flash.category.create_success"
+      redirect_to admin_categories_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -22,16 +37,6 @@ class Admin::CategoriesController < ApplicationController
       redirect_to admin_categories_path
     else
       render :edit
-    end
-  end
-
-  def create
-    @category = Category.new category_params
-    if @category.save
-      flash[:success] = t "flash.category.create_success"
-      redirect_to admin_categories_path
-    else
-      render :new
     end
   end
 

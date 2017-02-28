@@ -1,0 +1,42 @@
+<% if @category %>
+  <li>
+    <div class="title_holder">
+      <%= dish.name %>
+    </div>
+    <div class="view_holder">
+      <%= link_to t("button.view"),
+        admin_category_dish_path(dish.category_id, dish) %>
+    </div>
+    <div class="edit_holder">
+      <%= link_to t("button.edit"),
+        edit_admin_category_dish_path(dish.category_id, dish) %>
+    </div>
+    <div class="delete_holder">
+      <%= link_to t("button.delete"),
+        admin_category_dish_path(dish.category_id, dish), method: :delete,
+        data: {confirm: t(".delete_warning")} %>
+    </div>
+  </li>
+<% else %>
+  <tr class="dg_tr" id="di_row_0">
+    <td class="default_dg_td dg_left dg_nowrap"><%= dish.name %></td>
+    <td class="default_dg_td dg_left dg_nowrap">
+      <%= dish.category.name %>
+    </td>
+    <td class="default_dg_td dg_left dg_nowrap">
+      <%= t ".money" %><%= dish.price %>
+    </td>
+    <td class="default_dg_td dg_center dg_nowrap">
+      <%= link_to t(".view_dish_button"),
+        admin_dish_path(dish) %>
+    </td>
+    <td class="default_dg_td dg_center dg_nowrap">
+      <%= link_to t(".edit_dish_button"),
+        edit_admin_dish_path(dish) %>
+    </td>
+    <td class="default_dg_td dg_center dg_nowrap">
+      <%= link_to image_tag("http://icons.iconarchive.com/icons/saki/nuoveXT/128/Actions-button-cancel-icon.png"), admin_dish_path(dish),
+        method: :delete, data: {confirm: t(".delete_warning")} %>
+    </td>
+  </tr>
+<% end %>
